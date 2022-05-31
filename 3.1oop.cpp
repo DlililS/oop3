@@ -1,6 +1,6 @@
-﻿#include <iostream>
+#include <iostream>
 #include <cmath>
-
+using namespace std;
 class Complex {
 public:
 
@@ -44,34 +44,27 @@ public:
     }
 
 };
-std::ostream& operator<<(std::ostream& stream, const Complex& obj) {
+ostream& operator<<(ostream& stream, const Complex& obj) {
     return stream << obj.Im << " + " << obj.Re << "i";
 }
 class Vector {
     double a1, a2, a3;
     double b1, b2, b3;
-    double vector1[3];
-    double vector2[3];
+    double vector[3];
 public:
-    void setValues(double _a1, double _a2, double _a3, double _b1, double _b2, double _b3) {
+    void setValues(double _a1, double _a2, double _a3) {
         a1 = _a1;
         a2 = _a2;
         a3 = _a3;
-        b1 = _b1;
-        b2 = _b2;
-        b3 = _b3;
-        vector1[0] = a1;
-        vector1[1] = a2;
-        vector1[2] = a3;
-        vector2[0] = b1;
-        vector2[1] = b2;
-        vector2[2] = b3;
+        vector[0] = a1;
+        vector[1] = a2;
+        vector[2] = a3;
     }
     double plus() {
         double vector_c[3];
-        vector_c[0] = vector1[0] + vector2[0];
-        vector_c[1] = vector1[1] + vector2[1];
-        vector_c[2] = vector1[2] + vector2[2];
+        vector_c[0] = vector[0] + this->vector[0];
+        vector_c[1] = vector[1] + this->vector[1];
+        vector_c[2] = vector[2] + this->vector[2];
         for (double t : vector_c)
         {
             return t;
@@ -79,9 +72,9 @@ public:
     }
     double multiply() {
         double vector_c[3];
-        vector_c[0] = vector1[0] * vector2[0];
-        vector_c[1] = vector1[1] * vector2[1];
-        vector_c[2] = vector1[2] * vector2[2];
+        vector_c[0] = vector[0] * this->vector[0];
+        vector_c[1] = vector[1] * this->vector[1];
+        vector_c[2] = vector[2] * this->vector[2];
         for (double t : vector_c)
         {
             return t;
