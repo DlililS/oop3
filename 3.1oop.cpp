@@ -101,4 +101,3 @@ int main() {
     Vector c = a.plus(b);
     return 0;
 };
-
