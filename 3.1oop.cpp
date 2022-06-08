@@ -50,23 +50,31 @@ ostream& operator<<(ostream& stream, const Complex& obj) {
 class Vector {
     double a1, a2, a3;
 public:
+    Vector() : a1(0), a2(0), a3(0) { };
+    Vector(double _a1, double _a2, double _a3) {
+        a1 = _a1;
+        a2 = _a2;
+        a3 = _a3;
+    }
     void setValues(double _a1, double _a2, double _a3) {
         a1 = _a1;
         a2 = _a2;
         a3 = _a3;
     }
-    double plus() {;
-        a1 =a1 + this->a1;
-        a2 = a2 + this->a2;
-        a3 = a3 + this->a3;
-        return (a1, a2, a3);
-        
+    Vector plus(Vector a) {
+        a.a1 = a.a1 + this->a1;
+        a.a2 = a.a2 + this->a2;
+        a.a3 = a.a3 + this->a3;
+        return (a);
+
     }
-    double multiply() {
-        a1 = a1 * this->a1;
-        a2 = a2 * this->a2;
-        a3 = a3 * this->a3;
-        return (a1, a2, a3);
+    Vector multiply(Vector a) {
+        Vector vector;
+        a.a1 = a.a1 * this->a1;
+        a.a2 = a.a2 * this->a2;
+        a.a3 = a.a3 * this->a3;
+        //vector
+        return (a);
     }
 };
 class Circle {
@@ -88,5 +96,8 @@ public:
     }
 };
 int main() {
+    Vector a(1, 2, 3);
+    Vector b(5, 1, 2);
+    Vector c = a.plus(b);
     return 0;
 };
